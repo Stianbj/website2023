@@ -1,0 +1,94 @@
+<meta charset="utf-8">
+<title>Stians Nettside</title>
+<meta name="author" content="Bjørn Stian Johansen">
+<link rel="stylesheet" type="text/css" href="stlye.css">
+
+    <style>
+      header {
+        margin-top: 0; 
+        padding-top: 0;
+      }
+    </style>
+</head>
+
+
+<body>
+<header>
+<h1><a href="index.html">Stian</a></h1>
+<nav class="navbar">
+
+    <ul>
+      <li><a href="Hjem.html">Hjemmeside</a></li>
+      <li><a href="Interesser.html">Interesser</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="#">Foto</a></li>
+    </ul>
+  </nav>
+</header>
+      <body>
+        <main>
+            <div class="slideshow-container">
+           
+            <div class="mySlides fade">
+            <div class="numbertext">1 / 2</div>
+            <img src="Img/img1.jpg" style="width: 50%;">
+            <div class="text"> Dette er en av mine favoritt biler</div>
+
+            <div class="mySlides fade">
+            <div class="numbertext">2 / 2</div>
+            <img src="Img/img1.jpg" style="width: 50%;">
+            <div class="text"> Dette er en av mine favoritt biler</div>
+
+
+
+
+
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+              </div>
+
+
+      
+            
+        </main>
+        <script>
+       let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  }
+        </script>
+      </body>
